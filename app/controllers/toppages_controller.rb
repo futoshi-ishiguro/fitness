@@ -2,7 +2,7 @@ class ToppagesController < ApplicationController
   def index
     if logged_in?
       @record = current_user.records.build  # form_for 用
-      @records = current_user.records.order('created_at DESC').page(params[:page])
+      @records = Record.all.order('created_at DESC').page(params[:page])
     end
   end
 end

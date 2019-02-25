@@ -15,6 +15,6 @@
       <li class="<%= 'active' if current_page?(squats_user_path(@user)) %>"><%= link_to "スクワット", squats_user_path(@user) %></li>
       <li class="<%= 'active' if current_page?(deads_user_path(@user)) %>"><%= link_to "デッドリフト", deads_user_path(@user) %></li>
     </ul>
-    <%= render 'records/records', records: @bench_records %>
+    <%= render 'records/records', records: @squat_records %>
   </div>
 </div>
