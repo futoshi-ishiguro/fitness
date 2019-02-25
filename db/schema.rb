@@ -10,14 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190225060546) do
+ActiveRecord::Schema.define(version: 20190225132558) do
 
-  create_table "benches", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.float    "bench_record", limit: 24
+  create_table "records", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "status"
+    t.float    "record",     limit: 24
     t.integer  "user_id"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.index ["user_id"], name: "index_benches_on_user_id", using: :btree
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.index ["user_id"], name: "index_records_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -28,5 +29,5 @@ ActiveRecord::Schema.define(version: 20190225060546) do
     t.datetime "updated_at",      null: false
   end
 
-  add_foreign_key "benches", "users"
+  add_foreign_key "records", "users"
 end

@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @benches = @user.benches.order('created_at DESC').page(params[:page])
+    @records = @user.records.order('created_at DESC').page(params[:page])
+    @bench_records = @user.records.where(status: "ベンチプレス").order("created_at DESC").page(params[:page])
   end
 end
