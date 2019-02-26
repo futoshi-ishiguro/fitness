@@ -8,8 +8,8 @@
     <%= form_for(:session, url: login_path) do |f| %>
 
       <div class="form-group">
-        <%= f.label :email, 'Email' %>
-        <%= f.email_field :email, class: 'form-control' %>
+        <%= f.label :name, 'Name' %>
+        <%= f.text_field :name, :placeholder => "漢字で性と名の間に全角スペースを開けてください。", class: 'form-control' %>
       </div>
 
       <div class="form-group">

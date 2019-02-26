@@ -9,7 +9,7 @@
           <%= link_to record.user.name, user_path(record.user) %> <span class="text-muted">posted at <%= record.created_at %></span>
         </div>
         <div>
-          <p><%= record.status %><%= record.record %></p>
+          <p><%= record.status %><%= record.record %>kg</p>
         </div>
         <div>
           <% if current_user == record.user %>
